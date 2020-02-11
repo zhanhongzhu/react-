@@ -1,0 +1,109 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}
+
+.user-box {
+	width: 32vw;
+	border: 1px solid #eee;
+	padding: 20px 40px;
+	margin: 0 auto;
+	background-color: #fff;
+	border-radius: 10px 10px 0 0;
+}
+
+.username-input,
+.comment-input {
+	display: flex;
+	padding: 10px 0;
+}
+
+.username-input input {
+	width: calc(100% - 100px);
+	border: 1px solid #ccc;
+	height: 36px;
+	text-indent: 0.61em;
+	border-radius: 5px;
+}
+
+.comment-input textarea {
+	width: calc(100% - 100px);
+	border: 1px solid #ccc;
+	height: 186px;
+	text-indent: 0.61em;
+	padding-top: 10px;
+	border-radius: 5px;
+}
+
+.username-input label,
+.comment-input label {
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	padding-top: 5px;
+}
+
+
+html,
+body {
+	background-color: #f8f8f8;
+}
+
+.comment-box {
+	width: 32vw;
+	padding: 20px 40px;
+	margin: 0 auto;
+	background-color: #fff;
+	display: flex;
+	position: relative;
+	padding-bottom: 25px;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+.userName {
+	color: #37a2d1;
+	min-width: 42px;
+	width: auto;
+}
+
+.comment {}
+
+.bd {
+	border-bottom: 1px solid #eee;
+	position: absolute;
+
+	bottom: 10px;
+
+	width: 90%;
+}
+
+.publish button {
+	background:
+		#38a3d2;
+	color:
+		#fff;
+	box-shadow: none;
+	border: none;
+	padding: 5px 30px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.publish {
+	text-align: right;
+}
+
+
+.index {
+	padding-top: 20px;
+}
