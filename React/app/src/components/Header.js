@@ -28,7 +28,8 @@ class Header extends Component {
 	  }
       store.dispatch({
         type: 'CHANGE_COLOR',
-        themeColor: count%2===0?'#303643':'#563d7c'
+        themeColor: 
+		count%2===0?'#303643':'#563d7c'
       })
     }
 
@@ -40,7 +41,10 @@ class Header extends Component {
 
   render () {
     return (
-		<div className="changeColor" style={{ background: this.state.themeColor }}  onClick={this.handleSwitchColor.bind(this,1)}>Redux换肤</div>
+		<div className="changeColor" style={{ background: this.state.themeColor }}>
+			<div>React留言板</div>
+			<div className="switchs" onClick={this.handleSwitchColor.bind(this,1)}>Redux换肤</div>
+		</div>
     )
   }
 }
