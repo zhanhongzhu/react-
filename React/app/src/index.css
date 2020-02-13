@@ -17,7 +17,6 @@ code {
 	padding: 1rem 1.5rem;
 	margin: 0 auto;
 	background-color: #fff;
-	border-radius: 10px 10px 0 0;
 	max-width: 700px;
 	padding-top: 1rem;
 }
@@ -134,4 +133,26 @@ code{
 	#fff;
 	border: 1px solid
 	#ddd;
+}
+
+.headers{
+	background-color: #563d7c;
+}
+
+.changeColor{
+	padding: 1rem 1.5rem;
+	margin: 0 auto;
+	background-color: #fff;
+	position: relative;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	max-width: 700px;
+	text-align: right;
+	cursor: pointer;
+	color:#fff;
+}
+
+.changeColor:hover{
+	box-shadow: 3px 3px 12px #eee;
+	color:#eee;
 }

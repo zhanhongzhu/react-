@@ -6,9 +6,48 @@ import './index.css';
 import App from './App';
 import Input from './components/Input.js'
 import List from './components/List.js'
+
+import Header from './components/Header.js'
+import Content from './components/Content.js'
+import PropTypes from 'prop-types'
 import * as serviceWorker from './serviceWorker';
 
+function createStore (reducer) {
+  let state = null
+  const listeners = []
+  const subscribe = (listener) => listeners.push(listener)
+  const getState = () => state
+  const dispatch = (action) => {
+    state = reducer(state, action)
+    listeners.forEach((listener) => listener())
+  }
+  dispatch({}) // 初始化 state
+  return { getState, dispatch, subscribe }
+}
+
+
+const themeReducer = (state, action) => {
+  if (!state) return {
+    themeColor: '#303643'
+  }
+  switch (action.type) {
+    case 'CHANGE_COLOR':
+      return { ...state, themeColor: action.themeColor }
+    default:
+      return state
+  }
+}
+
+const store = createStore(themeReducer);
+
+
 class Index extends Component {
+	static childContextTypes = {
+	    store: PropTypes.object
+	}
+	getChildContext () {
+		return { store }
+	}
 	constructor (){
 	    super()
 	    this.state = {
@@ -56,15 +95,16 @@ class Index extends Component {
 		 this.setState({ comments })
 		 this._saveComments(comments)
 	 }
-	
+	 
 	render() {
 		return ( 
 		<div className = "index" >
+		 <Header/>
 			<Input  onSubmit={this.handleSubmitComment.bind(this)} />
 			<div>
 				 {this.state.comments.map((comment, i) => <List comment={comment} key={i} index={i}  onDeleteComment={this.handleDeleteComment.bind(this)}/>)}
 			</div>
-			</div>
+		</div>
 		)
 	}
 }
@@ -73,6 +113,11 @@ ReactDOM.render( <
 	Index / > ,
 	document.getElementById('root')
 );
+
+
+
+
+
 
 /* ReactDOM.render(<App />, document.getElementById('root')); */
 
